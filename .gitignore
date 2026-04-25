@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+
+# Node
+node_modules/
+dist/
+.env
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Build
+build/
+
+# Docker
+*.tar
+
+# .NET
+bin/
+obj/

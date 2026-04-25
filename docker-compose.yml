@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: ledgerguard-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ledgerguard
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./Backend/LedgerGuard.API
+      dockerfile: LedgerGuard.API/Dockerfile
+    container_name: ledgerguard-api
+    depends_on:
+      - postgres
+    environment:
+      ConnectionStrings__DefaultConnection: Host=postgres;Port=5432;Database=ledgerguard;Username=postgres;Password=postgres
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build:
+      context: ./Frontend/LedgerGuard
+      dockerfile: Dockerfile
+    container_name: ledgerguard-frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+
+volumes:
+  postgres_data:
