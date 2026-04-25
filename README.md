@@ -116,11 +116,20 @@ git clone https://github.com/CallynN/ledgerguard.git
 ```
 cd ledgerguard
 ```
-### 2. Run the application
+### 2. Create a .env file for the frontend by copying the example file:
+```
+cp Frontend/LedgerGuard/.env.example Frontend/LedgerGuard/.env
+```
+Alternatively, manually rename:
+```
+Frontend/LedgerGuard/.env.example → Frontend/LedgerGuard/.env
+```
+
+### 3. Run the application
 ```
 docker compose up --build
 ```
-### 3. Access the system
+### 4. Access the system
 
 | Service     | URL                                            |
 | ----------- | ---------------------------------------------- |
