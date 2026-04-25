@@ -2,22 +2,6 @@
 
 LedgerGuard is a full-stack dispute management system designed to handle transaction disputes between customers and administrators. It provides a structured workflow for creating, tracking, and resolving disputes with role-based access control.
 
----
-
-## 📌 Problem Statement
-
-Managing transaction disputes manually leads to:
-- Poor visibility of dispute status
-- Lack of accountability
-- Inefficient communication between stakeholders
-
-LedgerGuard solves this by providing:
-- Centralized dispute tracking
-- Role-based workflows (Admin vs Customer)
-- Structured updates and audit-friendly actions
-
----
-
 ## 🏗 System Architecture
 
 The application follows a **3-tier architecture**:
